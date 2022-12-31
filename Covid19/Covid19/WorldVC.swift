@@ -7,8 +7,11 @@
 
 import UIKit
 
-class WorldViewController: UIViewController {
+class WorldVC: UIViewController {
 
+    @IBOutlet weak var totalCaseLabel: UILabel!
+    @IBOutlet weak var totalDeathLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

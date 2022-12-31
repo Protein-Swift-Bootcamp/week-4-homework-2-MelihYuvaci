@@ -9,10 +9,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home View Controller-->
+        <!--HomeVC-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="HomeViewController" customModule="Covid19" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="HomeVC" customModule="Covid19" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -22,12 +22,18 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="Country"/>
+                                <connections>
+                                    <action selector="countryButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4zo-zW-wUr"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1nb-Yl-PNd">
                                 <rect key="frame" x="121" y="448" width="151" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="World"/>
+                                <connections>
+                                    <action selector="worldButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Ypl-oX-ZsF"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -38,10 +44,10 @@
             </objects>
             <point key="canvasLocation" x="64.885496183206101" y="-34.507042253521128"/>
         </scene>
-        <!--World View Controller-->
+        <!--WorldVC-->
         <scene sceneID="tN0-h4-094">
             <objects>
-                <viewController id="uUG-kb-Axs" customClass="WorldViewController" customModule="Covid19" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="uUG-kb-Axs" customClass="WorldVC" customModule="Covid19" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="v0h-oA-5Oz">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -54,7 +60,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="123456" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d64-Zm-msz">
-                                <rect key="frame" x="117" y="302" width="158" height="36"/>
+                                <rect key="frame" x="117" y="293" width="158" height="45"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="22"/>
                                 <nil key="textColor"/>
@@ -78,15 +84,19 @@
                         <viewLayoutGuide key="safeArea" id="w7M-wJ-hxc"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="totalCaseLabel" destination="d64-Zm-msz" id="iGq-Js-uDP"/>
+                        <outlet property="totalDeathLabel" destination="pvv-s3-60E" id="kmD-Ns-myG"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7Qi-wy-1Un" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="886" y="-477"/>
+            <point key="canvasLocation" x="884.73282442748086" y="-477.46478873239437"/>
         </scene>
-        <!--Country View Controller-->
+        <!--CountriesVC-->
         <scene sceneID="GZW-26-Ele">
             <objects>
-                <viewController id="UcK-Dg-rO5" customClass="CountryViewController" customModule="Covid19" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="UcK-Dg-rO5" customClass="CountriesVC" customModule="Covid19" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="CUC-Ix-9eN">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -105,15 +115,18 @@
                             <constraint firstItem="6Vc-al-qhd" firstAttribute="bottom" secondItem="sHq-v0-fb3" secondAttribute="bottom" id="hOJ-Lm-oA1"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="sHq-v0-fb3" id="32H-K6-bes"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bXu-NP-9qN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="918" y="238"/>
         </scene>
-        <!--View Controller-->
+        <!--Country StatisticsVC-->
         <scene sceneID="vD8-tU-38Y">
             <objects>
-                <viewController id="Kt7-kx-C3h" sceneMemberID="viewController">
+                <viewController id="Kt7-kx-C3h" customClass="CountryStatisticsVC" customModule="Covid19" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bcO-Bw-U6b">
                         <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -164,6 +177,14 @@
                         <viewLayoutGuide key="safeArea" id="gAz-fR-BVP"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="countryLabel" destination="nOX-XU-A2m" id="UiB-zc-zsV"/>
+                        <outlet property="dateLabel" destination="0xp-mg-dBt" id="cEl-UA-S0D"/>
+                        <outlet property="newCaseLabel" destination="FsB-ai-gN4" id="5P9-1W-RfS"/>
+                        <outlet property="newDeathLabel" destination="ooZ-fE-Cev" id="jJp-2h-P7E"/>
+                        <outlet property="totalCountryCaseLabel" destination="lMk-Jf-w6S" id="huZ-3R-935"/>
+                        <outlet property="totalCountryDeathLabel" destination="8LS-hl-r8k" id="yDx-CK-UNc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uFL-Lr-9Ks" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
