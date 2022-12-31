@@ -8,8 +8,6 @@
 import UIKit
 
 class CountryStatisticsVC: UIViewController {
-
-    
     
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
@@ -17,6 +15,7 @@ class CountryStatisticsVC: UIViewController {
     @IBOutlet weak var newCaseLabel: UILabel!
     @IBOutlet weak var totalCountryDeathLabel: UILabel!
     @IBOutlet weak var totalCountryCaseLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
