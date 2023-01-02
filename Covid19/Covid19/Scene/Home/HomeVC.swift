@@ -8,16 +8,25 @@
 import UIKit
 
 class HomeVC: UIViewController {
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
     }
-
+    
     @IBAction func worldButtonClicked(_ sender: UIButton) {
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        if let vc = storyBoard.instantiateViewController(withIdentifier: "WorldVC") as? WorldVC{
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        }
     }
     
     @IBAction func countryButtonClicked(_ sender: UIButton) {
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        if let vc = storyBoard.instantiateViewController(withIdentifier: "CountriesVC") as? CountriesVC{
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        }
     }
 }
 
