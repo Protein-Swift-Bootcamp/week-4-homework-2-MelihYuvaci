@@ -10,10 +10,11 @@
 		297A7A812962D22600F8E56C /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A7A7F2962D22600F8E56C /* CountryCell.swift */; };
 		297A7A822962D22600F8E56C /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 297A7A802962D22600F8E56C /* CountryCell.xib */; };
 		297A7A842962F5FB00F8E56C /* WorldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A7A832962F5FB00F8E56C /* WorldModel.swift */; };
+		297A7A8629631A9B00F8E56C /* CountriesModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A7A8529631A9B00F8E56C /* CountriesModel.swift */; };
 		29921DE82960F753004EBE00 /* CountryStatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29921DE72960F753004EBE00 /* CountryStatisticsVC.swift */; };
 		29921DF12960FCF8004EBE00 /* WorldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29921DF02960FCF8004EBE00 /* WorldData.swift */; };
 		29921DF32960FD46004EBE00 /* WorldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29921DF22960FD46004EBE00 /* WorldManager.swift */; };
-		29921DF72960FDFA004EBE00 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29921DF62960FDFA004EBE00 /* Countries.swift */; };
+		29921DF72960FDFA004EBE00 /* CountriesData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29921DF62960FDFA004EBE00 /* CountriesData.swift */; };
 		29921DF92960FE16004EBE00 /* CountriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29921DF82960FE16004EBE00 /* CountriesManager.swift */; };
 		29921DFB2960FF11004EBE00 /* Country Statistics.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29921DFA2960FF11004EBE00 /* Country Statistics.swift */; };
 		29921DFD2960FF28004EBE00 /* CountryStatisticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29921DFC2960FF28004EBE00 /* CountryStatisticsManager.swift */; };
@@ -31,10 +32,11 @@
 		297A7A7F2962D22600F8E56C /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		297A7A802962D22600F8E56C /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
 		297A7A832962F5FB00F8E56C /* WorldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldModel.swift; sourceTree = "<group>"; };
+		297A7A8529631A9B00F8E56C /* CountriesModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesModel.swift; sourceTree = "<group>"; };
 		29921DE72960F753004EBE00 /* CountryStatisticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryStatisticsVC.swift; sourceTree = "<group>"; };
 		29921DF02960FCF8004EBE00 /* WorldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldData.swift; sourceTree = "<group>"; };
 		29921DF22960FD46004EBE00 /* WorldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldManager.swift; sourceTree = "<group>"; };
-		29921DF62960FDFA004EBE00 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
+		29921DF62960FDFA004EBE00 /* CountriesData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesData.swift; sourceTree = "<group>"; };
 		29921DF82960FE16004EBE00 /* CountriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesManager.swift; sourceTree = "<group>"; };
 		29921DFA2960FF11004EBE00 /* Country Statistics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Country Statistics.swift"; sourceTree = "<group>"; };
 		29921DFC2960FF28004EBE00 /* CountryStatisticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryStatisticsManager.swift; sourceTree = "<group>"; };
@@ -83,10 +85,11 @@
 		29921DEB2960FC2B004EBE00 /* Countries */ = {
 			isa = PBXGroup;
 			children = (
-				29921DF62960FDFA004EBE00 /* Countries.swift */,
+				29921DF62960FDFA004EBE00 /* CountriesData.swift */,
 				297A7A7F2962D22600F8E56C /* CountryCell.swift */,
 				29EFCA162960E0BF0049EEA8 /* CountriesVC.swift */,
 				29921DF82960FE16004EBE00 /* CountriesManager.swift */,
+				297A7A8529631A9B00F8E56C /* CountriesModel.swift */,
 			);
 			path = Countries;
 			sourceTree = "<group>";
@@ -247,11 +250,12 @@
 				29DFF9F02960CC8500942E70 /* SceneDelegate.swift in Sources */,
 				29921DFB2960FF11004EBE00 /* Country Statistics.swift in Sources */,
 				297A7A812962D22600F8E56C /* CountryCell.swift in Sources */,
-				29921DF72960FDFA004EBE00 /* Countries.swift in Sources */,
+				29921DF72960FDFA004EBE00 /* CountriesData.swift in Sources */,
 				29EFCA172960E0C00049EEA8 /* CountriesVC.swift in Sources */,
 				29921DE82960F753004EBE00 /* CountryStatisticsVC.swift in Sources */,
 				29921DF12960FCF8004EBE00 /* WorldData.swift in Sources */,
 				29921DF92960FE16004EBE00 /* CountriesManager.swift in Sources */,
+				297A7A8629631A9B00F8E56C /* CountriesModel.swift in Sources */,
 				29EFCA152960D79C0049EEA8 /* WorldVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

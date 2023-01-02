@@ -7,36 +7,54 @@
 
 import UIKit
 
-class CountriesVC: UIViewController {
-
+class CountriesVC: UIViewController, CountriesManagerDelegate{
+    
+    
+    
     @IBOutlet weak var tableView: UITableView!
     
-    var countries = ["a","b","c","d","e","f","g","h","j","k"]
+    var country = [CountriesModel]()
+    var countriesManager = CountriesManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         tableView.dataSource = self
         tableView.delegate = self
         tableView.register(UINib(nibName: "CountryCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
+        countriesManager.delegate = self
+        countriesManager.getCountries()
+    
     }
     
     @IBAction func stopButtonClicked(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
     
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+    
+    func didUpdateCountries(_ countriesManager: CountriesManager, countries: [CountriesModel]) {
+        DispatchQueue.main.async {
+            self.country = countries
+        }
+    }
+    
 }
+
 
 //MARK: - Tableview Datasource
 
 extension CountriesVC : UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return countries.count
+        return country.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ReusableCell", for: indexPath) as! CountryCell
-        cell.label.text = countries[indexPath.row]
+        cell.label.text = country[indexPath.row].country
         return cell
     }
 }

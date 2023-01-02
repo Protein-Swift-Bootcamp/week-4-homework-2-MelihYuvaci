@@ -138,6 +138,7 @@
                                                 <action selector="stopButtonClicked:" destination="UcK-Dg-rO5" id="NsL-rK-tRK"/>
                                             </connections>
                                         </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="kjH-w4-azZ"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
