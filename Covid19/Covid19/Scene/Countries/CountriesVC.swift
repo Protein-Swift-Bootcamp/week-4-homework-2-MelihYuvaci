@@ -9,11 +9,9 @@ import UIKit
 
 class CountriesVC: UIViewController, CountriesManagerDelegate{
     
-    
-    
     @IBOutlet weak var tableView: UITableView!
     
-    var country = [CountriesModel]()
+    var country : [CountriesModel] = []
     var countriesManager = CountriesManager()
     
     override func viewDidLoad() {
@@ -38,6 +36,7 @@ class CountriesVC: UIViewController, CountriesManagerDelegate{
     func didUpdateCountries(_ countriesManager: CountriesManager, countries: [CountriesModel]) {
         DispatchQueue.main.async {
             self.country = countries
+            self.tableView.reloadData()
         }
     }
     
@@ -63,7 +62,7 @@ extension CountriesVC : UITableViewDataSource{
 extension CountriesVC : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        
+
         tableView.deselectRow(at: indexPath, animated: true)
         
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)

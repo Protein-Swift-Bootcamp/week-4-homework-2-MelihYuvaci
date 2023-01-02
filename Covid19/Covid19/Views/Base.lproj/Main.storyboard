@@ -21,7 +21,7 @@
                                 <rect key="frame" x="121" y="569" width="151" height="35"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Country"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Countries"/>
                                 <connections>
                                     <action selector="countryButtonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4zo-zW-wUr"/>
                                 </connections>
@@ -138,7 +138,6 @@
                                                 <action selector="stopButtonClicked:" destination="UcK-Dg-rO5" id="NsL-rK-tRK"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="kjH-w4-azZ"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
