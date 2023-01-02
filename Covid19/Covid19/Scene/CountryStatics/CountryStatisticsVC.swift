@@ -18,10 +18,11 @@ class CountryStatisticsVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
     }
     
-
-
+    @IBAction func stopButtonClicked(_ sender: UIBarButtonItem) {
+        dismiss(animated: true)
+    }
+    
 }

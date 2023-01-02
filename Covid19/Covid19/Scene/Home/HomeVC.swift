@@ -9,11 +9,15 @@ import UIKit
 
 class HomeVC: UIViewController {
     
+    var worldManager = WorldManager()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
     
+    
     @IBAction func worldButtonClicked(_ sender: UIButton) {
+        
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         if let vc = storyBoard.instantiateViewController(withIdentifier: "WorldVC") as? WorldVC{
             vc.modalPresentationStyle = .fullScreen
@@ -22,6 +26,7 @@ class HomeVC: UIViewController {
     }
     
     @IBAction func countryButtonClicked(_ sender: UIButton) {
+        
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         if let vc = storyBoard.instantiateViewController(withIdentifier: "CountriesVC") as? CountriesVC{
             vc.modalPresentationStyle = .fullScreen

@@ -9,8 +9,9 @@
 /* Begin PBXBuildFile section */
 		297A7A812962D22600F8E56C /* CountryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A7A7F2962D22600F8E56C /* CountryCell.swift */; };
 		297A7A822962D22600F8E56C /* CountryCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 297A7A802962D22600F8E56C /* CountryCell.xib */; };
+		297A7A842962F5FB00F8E56C /* WorldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 297A7A832962F5FB00F8E56C /* WorldModel.swift */; };
 		29921DE82960F753004EBE00 /* CountryStatisticsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29921DE72960F753004EBE00 /* CountryStatisticsVC.swift */; };
-		29921DF12960FCF8004EBE00 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29921DF02960FCF8004EBE00 /* World.swift */; };
+		29921DF12960FCF8004EBE00 /* WorldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29921DF02960FCF8004EBE00 /* WorldData.swift */; };
 		29921DF32960FD46004EBE00 /* WorldManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29921DF22960FD46004EBE00 /* WorldManager.swift */; };
 		29921DF72960FDFA004EBE00 /* Countries.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29921DF62960FDFA004EBE00 /* Countries.swift */; };
 		29921DF92960FE16004EBE00 /* CountriesManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 29921DF82960FE16004EBE00 /* CountriesManager.swift */; };
@@ -29,8 +30,9 @@
 /* Begin PBXFileReference section */
 		297A7A7F2962D22600F8E56C /* CountryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryCell.swift; sourceTree = "<group>"; };
 		297A7A802962D22600F8E56C /* CountryCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryCell.xib; sourceTree = "<group>"; };
+		297A7A832962F5FB00F8E56C /* WorldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldModel.swift; sourceTree = "<group>"; };
 		29921DE72960F753004EBE00 /* CountryStatisticsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryStatisticsVC.swift; sourceTree = "<group>"; };
-		29921DF02960FCF8004EBE00 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
+		29921DF02960FCF8004EBE00 /* WorldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldData.swift; sourceTree = "<group>"; };
 		29921DF22960FD46004EBE00 /* WorldManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorldManager.swift; sourceTree = "<group>"; };
 		29921DF62960FDFA004EBE00 /* Countries.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Countries.swift; sourceTree = "<group>"; };
 		29921DF82960FE16004EBE00 /* CountriesManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountriesManager.swift; sourceTree = "<group>"; };
@@ -70,9 +72,10 @@
 		29921DEA2960FC0B004EBE00 /* World */ = {
 			isa = PBXGroup;
 			children = (
-				29921DF02960FCF8004EBE00 /* World.swift */,
+				29921DF02960FCF8004EBE00 /* WorldData.swift */,
 				29EFCA142960D79C0049EEA8 /* WorldVC.swift */,
 				29921DF22960FD46004EBE00 /* WorldManager.swift */,
+				297A7A832962F5FB00F8E56C /* WorldModel.swift */,
 			);
 			path = World;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 			files = (
 				29921DF32960FD46004EBE00 /* WorldManager.swift in Sources */,
 				29DFF9F22960CC8500942E70 /* HomeVC.swift in Sources */,
+				297A7A842962F5FB00F8E56C /* WorldModel.swift in Sources */,
 				29DFF9EE2960CC8500942E70 /* AppDelegate.swift in Sources */,
 				29921DFD2960FF28004EBE00 /* CountryStatisticsManager.swift in Sources */,
 				29DFF9F02960CC8500942E70 /* SceneDelegate.swift in Sources */,
@@ -246,7 +250,7 @@
 				29921DF72960FDFA004EBE00 /* Countries.swift in Sources */,
 				29EFCA172960E0C00049EEA8 /* CountriesVC.swift in Sources */,
 				29921DE82960F753004EBE00 /* CountryStatisticsVC.swift in Sources */,
-				29921DF12960FCF8004EBE00 /* World.swift in Sources */,
+				29921DF12960FCF8004EBE00 /* WorldData.swift in Sources */,
 				29921DF92960FE16004EBE00 /* CountriesManager.swift in Sources */,
 				29EFCA152960D79C0049EEA8 /* WorldVC.swift in Sources */,
 			);

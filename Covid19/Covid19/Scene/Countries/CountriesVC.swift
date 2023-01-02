@@ -13,22 +13,23 @@ class CountriesVC: UIViewController {
     
     var countries = ["a","b","c","d","e","f","g","h","j","k"]
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.dataSource = self
+        tableView.delegate = self
         tableView.register(UINib(nibName: "CountryCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
     }
     
-
     @IBAction func stopButtonClicked(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
     
 }
 
+//MARK: - Tableview Datasource
+
 extension CountriesVC : UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return countries.count
     }
@@ -38,6 +39,20 @@ extension CountriesVC : UITableViewDataSource{
         cell.label.text = countries[indexPath.row]
         return cell
     }
+}
+
+//MARK: - Tableview Delegate Methods
+extension CountriesVC : UITableViewDelegate{
     
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        tableView.deselectRow(at: indexPath, animated: true)
+        
+        let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
+        if let vc = storyBoard.instantiateViewController(withIdentifier: "CountryStatisticsVC") as? CountryStatisticsVC{
+            vc.modalPresentationStyle = .fullScreen
+            present(vc, animated: true)
+        }
+        
+    }
 }
