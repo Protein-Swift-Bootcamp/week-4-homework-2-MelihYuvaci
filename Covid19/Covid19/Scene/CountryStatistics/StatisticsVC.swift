@@ -16,8 +16,8 @@ class StatisticsVC: UIViewController, StatisticsManagerDelegate{
     @IBOutlet weak var activeLabel: UILabel!
     @IBOutlet weak var recoveredLabel: UILabel!
     
-    
     var countriesStatisticsManager = StatisticsManager()
+    var route : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,7 +37,15 @@ class StatisticsVC: UIViewController, StatisticsManagerDelegate{
         let date = "\(sender.date)"
         let dateFirst = date.split(separator: " ")
         print(dateFirst[0])
-        countriesStatisticsManager.getStatistics(countryName: "turkey", date: String(dateFirst[0]))
+        if route != "" {
+            print(route!)
+            self.countryLabel.text = "Ülke:"
+            self.confirmedLabel.text = ""
+            self.deathLabel.text = ""
+            self.activeLabel.text = ""
+            self.recoveredLabel.text = ""
+            countriesStatisticsManager.getStatistics(countryName: route!, date: String(dateFirst[0]))
+        }
         
     }
     

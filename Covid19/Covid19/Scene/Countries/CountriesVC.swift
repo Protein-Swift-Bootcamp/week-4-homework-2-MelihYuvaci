@@ -62,11 +62,12 @@ extension CountriesVC : UITableViewDataSource{
 extension CountriesVC : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
+        
         tableView.deselectRow(at: indexPath, animated: true)
         
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
         if let vc = storyBoard.instantiateViewController(withIdentifier: "StatisticsVC") as? StatisticsVC{
+            vc.route = country[indexPath.row].slug
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
         }

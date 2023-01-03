@@ -55,6 +55,7 @@ class StatisticsManager {
                 let deaths = each.deaths
                 let recovered = each.recovered
                 let active = each.active
+                statisticsArray.removeAll(keepingCapacity: false)
                 statisticsArray.append(StatisticsModel(country: country, confirmed: confirmed, deaths: deaths, recovered: recovered, active: active))
             }
             return statisticsArray
