@@ -9,7 +9,6 @@ import UIKit
 
 class HomeVC: UIViewController {
     
-    var worldManager = WorldManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()

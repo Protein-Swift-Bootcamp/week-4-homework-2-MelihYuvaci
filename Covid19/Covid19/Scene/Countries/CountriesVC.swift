@@ -66,7 +66,7 @@ extension CountriesVC : UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
-        if let vc = storyBoard.instantiateViewController(withIdentifier: "CountryStatisticsVC") as? CountryStatisticsVC{
+        if let vc = storyBoard.instantiateViewController(withIdentifier: "StatisticsVC") as? StatisticsVC{
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
         }
