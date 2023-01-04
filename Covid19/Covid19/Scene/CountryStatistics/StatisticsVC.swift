@@ -7,7 +7,7 @@
 
 import UIKit
 
-class StatisticsVC: UIViewController, StatisticsManagerDelegate{
+class StatisticsVC: UIViewController{
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var countryLabel: UILabel!
@@ -26,28 +26,27 @@ class StatisticsVC: UIViewController, StatisticsManagerDelegate{
         
         let today = Date()
         datePicker.maximumDate = Calendar.current.date(byAdding: .day, value: -1, to: today)
+        loadStatistics()
     }
+    
     
     @IBAction func stopButtonClicked(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
     
+    //MARK: - Date Picker
+    
     @IBAction func datePickerClicked(_ sender: UIDatePicker) {
-        
-        let date = "\(sender.date)"
-        let dateFirst = date.split(separator: " ")
-        print(dateFirst[0])
-        if route != "" {
-            print(route!)
-            self.countryLabel.text = "Ülke:"
-            self.confirmedLabel.text = ""
-            self.deathLabel.text = ""
-            self.activeLabel.text = ""
-            self.recoveredLabel.text = ""
-            countriesStatisticsManager.getStatistics(countryName: route!, date: String(dateFirst[0]))
-        }
-        
+        loadStatistics()
     }
+    
+}
+
+
+
+//MARK: - StaticsManagerDelegate
+
+extension StatisticsVC: StatisticsManagerDelegate{
     
     func didUpdateStatistics(_ countryStatisticsManager: StatisticsManager, statistics: [StatisticsModel]) {
         DispatchQueue.main.async {
@@ -62,4 +61,23 @@ class StatisticsVC: UIViewController, StatisticsManagerDelegate{
     func didFailWithError(error: Error) {
         print(error)
     }
+
+}
+
+//MARK: - Data Manipulation Method
+
+extension StatisticsVC{
+    
+    func loadStatistics(){
+        
+        let date = "\(datePicker.date)"
+        let dateFirst = date.split(separator: " ")
+        print(dateFirst[0])
+        if route != "" {
+            print(route!)
+            self.countryLabel.text = "Ülke:"
+            countriesStatisticsManager.getStatistics(countryName: route!, date: String(dateFirst[0]))
+        }
+    }
+
 }

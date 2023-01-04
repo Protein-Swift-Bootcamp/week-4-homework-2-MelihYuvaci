@@ -28,6 +28,8 @@ class StatisticsManager {
         getStatistics(with: urlString)
     }
     
+    //MARK: - Send Data with Protocol
+    
     func getStatistics(with urlString: String){
         if let url = URL(string: urlString){
             let session = URLSession(configuration: .default)
@@ -44,6 +46,8 @@ class StatisticsManager {
             task.resume()
         }
     }
+    
+    //MARK: - Parse Json
     
     func parseJson(_ data: Data) -> [StatisticsModel]?{
         let decoder = JSONDecoder()

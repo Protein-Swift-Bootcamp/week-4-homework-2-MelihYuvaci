@@ -94,11 +94,7 @@
                                                 <action selector="stopButtonClicked:" destination="uUG-kb-Axs" id="G3D-Ab-vYh"/>
                                             </connections>
                                         </barButtonItem>
-                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="prO-nn-pdw">
-                                            <connections>
-                                                <action selector="refreshButtonClicked:" destination="uUG-kb-Axs" id="UWR-nE-xZx"/>
-                                            </connections>
-                                        </barButtonItem>
+                                        <barButtonItem key="rightBarButtonItem" systemItem="refresh" id="prO-nn-pdw"/>
                                     </navigationItem>
                                 </items>
                             </navigationBar>
