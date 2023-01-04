@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CountriesVC: UIViewController, CountriesManagerDelegate{
+class CountriesVC: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
     
@@ -22,24 +22,11 @@ class CountriesVC: UIViewController, CountriesManagerDelegate{
         tableView.register(UINib(nibName: "CountryCell", bundle: nil), forCellReuseIdentifier: "ReusableCell")
         countriesManager.delegate = self
         countriesManager.getCountries()
-    
     }
     
     @IBAction func stopButtonClicked(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
     }
-    
-    func didFailWithError(error: Error) {
-        print(error)
-    }
-    
-    func didUpdateCountries(_ countriesManager: CountriesManager, countries: [CountriesModel]) {
-        DispatchQueue.main.async {
-            self.country = countries
-            self.tableView.reloadData()
-        }
-    }
-    
 }
 
 
@@ -59,6 +46,7 @@ extension CountriesVC : UITableViewDataSource{
 }
 
 //MARK: - Tableview Delegate Methods
+
 extension CountriesVC : UITableViewDelegate{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -71,6 +59,21 @@ extension CountriesVC : UITableViewDelegate{
             vc.modalPresentationStyle = .fullScreen
             present(vc, animated: true)
         }
-        
     }
+}
+//MARK: - CountriesManagerDelegate
+
+extension CountriesVC :CountriesManagerDelegate{
+    
+    func didUpdateCountries(_ countriesManager: CountriesManager, countries: [CountriesModel]) {
+        DispatchQueue.main.async {
+            self.country = countries
+            self.tableView.reloadData()
+        }
+    }
+    
+    func didFailWithError(error: Error) {
+        print(error)
+    }
+   
 }

@@ -19,6 +19,8 @@ class CountriesManager {
     var delegate : CountriesManagerDelegate?
     var countriesArray = [CountriesModel]()
     
+    //MARK: - Send Data with Protocol
+    
     func getCountries(){
         if let url = URL(string: countriesUrl){
             let session = URLSession(configuration: .default)
@@ -36,6 +38,8 @@ class CountriesManager {
             
         }
     }
+    
+    //MARK: - Data Manipulation Method
     
     func parseJson(_ data: Data) -> [CountriesModel]?{
         let decoder = JSONDecoder()

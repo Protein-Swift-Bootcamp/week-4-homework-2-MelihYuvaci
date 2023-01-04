@@ -18,6 +18,8 @@ struct WorldManager {
     
     var delegate : WorldManagerDelegate?
     
+    //MARK: - Send Data with Protocol
+    
     func getWorldStatics(){
         if let url = URL(string: worldURL){
             let session = URLSession(configuration: .default)
@@ -34,6 +36,8 @@ struct WorldManager {
             task.resume()
         }
     }
+    
+    //MARK: - Parse Json
     
     func parseJson(_ data: Data)-> WorldModel?{
         let decoder = JSONDecoder()
