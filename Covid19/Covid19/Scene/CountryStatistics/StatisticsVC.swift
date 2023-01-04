@@ -50,7 +50,7 @@ extension StatisticsVC: StatisticsManagerDelegate{
     
     func didUpdateStatistics(_ countryStatisticsManager: StatisticsManager, statistics: [StatisticsModel]) {
         DispatchQueue.main.async {
-            self.countryLabel.text = "Ülke: \(statistics[0].country)"
+            self.countryLabel.text = String(statistics[0].country)
             self.confirmedLabel.text = String(statistics[0].confirmed)
             self.deathLabel.text = String(statistics[0].deaths)
             self.activeLabel.text = String(statistics[0].active)
