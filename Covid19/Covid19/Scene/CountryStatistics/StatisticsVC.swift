@@ -28,6 +28,8 @@ class StatisticsVC: UIViewController{
         let today = Date()
         datePicker.maximumDate = Calendar.current.date(byAdding: .day, value: -2, to: today)
         loadStatistics()
+        self.activityIndicator.stopAnimating()
+        self.activityIndicator.isHidden = true
     }
     
     

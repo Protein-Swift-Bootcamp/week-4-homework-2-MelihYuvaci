@@ -66,9 +66,7 @@ extension CountriesVC : UITableViewDelegate{
 extension CountriesVC :CountriesManagerDelegate{
     
     func didUpdateCountries(_ countriesManager: CountriesManager, countries: [CountriesModel]) {
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
-            self.activityIndicator.stopAnimating()
-            self.activityIndicator.isHidden = true
+        DispatchQueue.main.async() {
             self.country = countries
             self.tableView.reloadData()
         }
@@ -87,5 +85,10 @@ extension CountriesVC {
         super.viewDidAppear(animated)
         activityIndicator.isHidden = false
         activityIndicator.startAnimating()
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
+        }
     }
 }
