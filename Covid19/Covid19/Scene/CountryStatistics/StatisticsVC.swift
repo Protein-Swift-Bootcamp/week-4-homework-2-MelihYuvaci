@@ -15,6 +15,7 @@ class StatisticsVC: UIViewController{
     @IBOutlet weak var deathLabel: UILabel!
     @IBOutlet weak var activeLabel: UILabel!
     @IBOutlet weak var recoveredLabel: UILabel!
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     
     var countriesStatisticsManager = StatisticsManager()
     var route : String?
@@ -25,7 +26,7 @@ class StatisticsVC: UIViewController{
         countriesStatisticsManager.delegate = self
         
         let today = Date()
-        datePicker.maximumDate = Calendar.current.date(byAdding: .day, value: -1, to: today)
+        datePicker.maximumDate = Calendar.current.date(byAdding: .day, value: -2, to: today)
         loadStatistics()
     }
     
@@ -49,7 +50,9 @@ class StatisticsVC: UIViewController{
 extension StatisticsVC: StatisticsManagerDelegate{
     
     func didUpdateStatistics(_ countryStatisticsManager: StatisticsManager, statistics: [StatisticsModel]) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
             self.countryLabel.text = String(statistics[0].country)
             self.confirmedLabel.text = String(statistics[0].confirmed)
             self.deathLabel.text = String(statistics[0].deaths)
@@ -78,6 +81,16 @@ extension StatisticsVC{
             self.countryLabel.text = "Ülke:"
             countriesStatisticsManager.getStatistics(countryName: route!, date: String(dateFirst[0]))
         }
+    }
+}
+
+//MARK: - Activity Indicator
+
+extension StatisticsVC {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
     }
 
 }

@@ -117,11 +117,19 @@
                                 <fontDescription key="fontDescription" type="system" weight="light" pointSize="27"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="UZP-wl-tPf">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="w7M-wJ-hxc"/>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="UZP-wl-tPf" firstAttribute="centerY" secondItem="v0h-oA-5Oz" secondAttribute="centerY" id="8dG-ME-Bsp"/>
+                            <constraint firstItem="UZP-wl-tPf" firstAttribute="centerX" secondItem="v0h-oA-5Oz" secondAttribute="centerX" id="fbh-jF-lJG"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="UZP-wl-tPf" id="dfR-Vg-M0y"/>
                         <outlet property="totalCaseLabel" destination="d64-Zm-msz" id="iGq-Js-uDP"/>
                         <outlet property="totalDeathLabel" destination="pvv-s3-60E" id="kmD-Ns-myG"/>
                     </connections>
@@ -143,6 +151,9 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="pPj-4u-lBa">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
                             <navigationBar contentMode="scaleToFill" fixedFrame="YES" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ef0-jv-ICA">
                                 <rect key="frame" x="-4" y="59" width="394" height="44"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
@@ -160,8 +171,13 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Vc-al-qhd"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="pPj-4u-lBa" firstAttribute="centerY" secondItem="CUC-Ix-9eN" secondAttribute="centerY" id="fkS-D8-0x9"/>
+                            <constraint firstItem="pPj-4u-lBa" firstAttribute="centerX" secondItem="CUC-Ix-9eN" secondAttribute="centerX" id="jmD-oc-C5b"/>
+                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="activityIndicator" destination="pPj-4u-lBa" id="RQu-ac-0tn"/>
                         <outlet property="tableView" destination="sHq-v0-fb3" id="32H-K6-bes"/>
                     </connections>
                 </viewController>
@@ -292,12 +308,20 @@
                                 <rect key="frame" x="19" y="656" width="71" height="72"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" style="large" translatesAutoresizingMaskIntoConstraints="NO" id="hve-iF-ADi">
+                                <rect key="frame" x="178" y="407.66666666666669" width="37" height="37"/>
+                            </activityIndicatorView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="gAz-fR-BVP"/>
                         <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="hve-iF-ADi" firstAttribute="centerX" secondItem="bcO-Bw-U6b" secondAttribute="centerX" id="Juy-uh-0UO"/>
+                            <constraint firstItem="hve-iF-ADi" firstAttribute="centerY" secondItem="bcO-Bw-U6b" secondAttribute="centerY" id="vDE-wF-idJ"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="activeLabel" destination="QTv-0m-dJ5" id="xXC-Gk-A2V"/>
+                        <outlet property="activityIndicator" destination="hve-iF-ADi" id="p33-ri-u7f"/>
                         <outlet property="confirmedLabel" destination="bhE-X3-2PW" id="gvr-lj-uHW"/>
                         <outlet property="countryLabel" destination="nOX-XU-A2m" id="UiB-zc-zsV"/>
                         <outlet property="datePicker" destination="oRK-hC-aUi" id="1AH-85-W5i"/>

@@ -9,6 +9,7 @@ import UIKit
 
 class WorldVC: UIViewController {
     
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     @IBOutlet weak var totalCaseLabel: UILabel!
     @IBOutlet weak var totalDeathLabel: UILabel!
     
@@ -18,7 +19,6 @@ class WorldVC: UIViewController {
         super.viewDidLoad()
         worldManager.delegate = self
         worldManager.getWorldStatics()
-        
     }
     @IBAction func stopButtonClicked(_ sender: UIBarButtonItem) {
         dismiss(animated: true)
@@ -29,13 +29,26 @@ class WorldVC: UIViewController {
 //MARK: - WorldManagerDelegate
 
 extension WorldVC : WorldManagerDelegate{
+    
     func didUpdateWorldStatics(_ worldManager: WorldManager, world: WorldModel) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
             self.totalCaseLabel.text = String(world.totalConfirmed)
             self.totalDeathLabel.text = String(world.totalDeaths)
         }
     }
     func didFailWithError(error: Error) {
         print(error)
+    }
+}
+
+//MARK: - Activity Indicator
+
+extension WorldVC {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
     }
 }

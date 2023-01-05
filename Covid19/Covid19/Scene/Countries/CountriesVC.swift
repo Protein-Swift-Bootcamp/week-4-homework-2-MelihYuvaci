@@ -10,7 +10,7 @@ import UIKit
 class CountriesVC: UIViewController{
     
     @IBOutlet weak var tableView: UITableView!
-    
+    @IBOutlet weak var activityIndicator: UIActivityIndicatorView!
     var country : [CountriesModel] = []
     var countriesManager = CountriesManager()
     
@@ -66,7 +66,9 @@ extension CountriesVC : UITableViewDelegate{
 extension CountriesVC :CountriesManagerDelegate{
     
     func didUpdateCountries(_ countriesManager: CountriesManager, countries: [CountriesModel]) {
-        DispatchQueue.main.async {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.activityIndicator.stopAnimating()
+            self.activityIndicator.isHidden = true
             self.country = countries
             self.tableView.reloadData()
         }
@@ -76,4 +78,14 @@ extension CountriesVC :CountriesManagerDelegate{
         print(error)
     }
    
+}
+
+//MARK: - Activity Indicator
+
+extension CountriesVC {
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        activityIndicator.isHidden = false
+        activityIndicator.startAnimating()
+    }
 }

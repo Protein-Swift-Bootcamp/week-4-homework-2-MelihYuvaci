@@ -14,7 +14,6 @@ class HomeVC: UIViewController {
         super.viewDidLoad()
     }
     
-    
     @IBAction func worldButtonClicked(_ sender: UIButton) {
         
         let storyBoard = UIStoryboard.init(name: "Main", bundle: nil)
@@ -33,4 +32,3 @@ class HomeVC: UIViewController {
         }
     }
 }
-
