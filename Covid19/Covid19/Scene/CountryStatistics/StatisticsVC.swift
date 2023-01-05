@@ -80,7 +80,6 @@ extension StatisticsVC{
         print(dateFirst[0])
         if route != "" {
             print(route!)
-            self.countryLabel.text = "Ülke:"
             countriesStatisticsManager.getStatistics(countryName: route!, date: String(dateFirst[0]))
         }
     }
