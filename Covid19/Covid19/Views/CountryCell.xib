@@ -16,19 +16,33 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBs-d6-3V7">
-                        <rect key="frame" x="59" y="12" width="225" height="21"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aBs-d6-3V7">
+                        <rect key="frame" x="59" y="12" width="41.333333333333343" height="21"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="21" id="4d8-tA-dcD"/>
+                        </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="Mask" translatesAutoresizingMaskIntoConstraints="NO" id="owa-SN-9YE">
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mask" translatesAutoresizingMaskIntoConstraints="NO" id="owa-SN-9YE">
                         <rect key="frame" x="9" y="8" width="28" height="28"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="28" id="F62-KY-Pl4"/>
+                            <constraint firstAttribute="height" constant="28" id="G8a-0E-7MF"/>
+                        </constraints>
                     </imageView>
                 </subviews>
                 <color key="backgroundColor" red="0.95686274509803915" green="0.95686274509803915" blue="0.95686274509803915" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                <constraints>
+                    <constraint firstAttribute="bottom" secondItem="aBs-d6-3V7" secondAttribute="bottom" constant="11" id="4wD-Dz-Z5Y"/>
+                    <constraint firstAttribute="bottom" secondItem="owa-SN-9YE" secondAttribute="bottom" constant="8" id="AQ7-1O-SCi"/>
+                    <constraint firstItem="aBs-d6-3V7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="12" id="cI9-rA-P01"/>
+                    <constraint firstAttribute="trailing" secondItem="aBs-d6-3V7" secondAttribute="trailing" constant="219.66999999999999" id="jWP-Ky-WPR"/>
+                    <constraint firstItem="aBs-d6-3V7" firstAttribute="leading" secondItem="owa-SN-9YE" secondAttribute="trailing" constant="22" id="kEu-gU-jSS"/>
+                    <constraint firstItem="owa-SN-9YE" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="8" id="ouR-Tz-gVy"/>
+                    <constraint firstItem="owa-SN-9YE" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="9" id="sgQ-bj-u1t"/>
+                </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>

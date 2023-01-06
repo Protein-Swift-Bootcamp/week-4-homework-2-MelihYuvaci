@@ -46,7 +46,7 @@ class StatisticsVC: UIViewController{
         DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
             self.activityIndicator.stopAnimating()
             self.activityIndicator.isHidden = true
-           
+
         }
         loadStatistics()
         
